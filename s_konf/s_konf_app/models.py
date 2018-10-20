@@ -6,4 +6,8 @@ class Room(models.Model):
     capacity = models.IntegerField(null=True)
     projector = models.BooleanField(default=True)
 
-#class Reservation(models.Model):
+
+class Reservation(models.Model):
+    date = models.DateField(unique_for_date=True)
+    comment = models.CharField(max_length=200)
+    room_id = models.ForeignKey('Room', on_delete=models.CASCADE)
