@@ -17,12 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from s_konf_app.views import MainSiteView, RoomView
+from s_konf_app.views import MainSiteView, RoomView, AddNewRoomView, ModifyRoomView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', MainSiteView.as_view(), name='main'),
     url(r'^room/(?P<pk>\d+)/$', RoomView.as_view(), name="room"),
+    path('room/new', AddNewRoomView.as_view(), name='new_room'),
+    url(r'^room/modify/(?P<pk>\d+)/$', ModifyRoomView.as_view(), name="modify_room"),
 
 ]
