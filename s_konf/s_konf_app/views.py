@@ -7,7 +7,6 @@ from s_konf_app.models import Room
 # Create your views here.
 
 
-
 class MainSiteView(View):
     def get(self, request):
         ctx = {}
@@ -16,3 +15,18 @@ class MainSiteView(View):
 
 class RoomView(LoginRequiredMixin, DetailView):
     model = Room
+
+
+class AddNewRoomView(View):
+    model = Room
+    pass
+
+
+class ModifyRoomView(View):
+    model = Room
+    pass
+
+
+class DeleteRoomView(View):
+    model = Room
+    pass
