@@ -1,8 +1,10 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
 from django.views import View
+from .models import Room
 from django.views.generic import DetailView
-from s_konf_app.models import Room
+from django.views.generic.edit import CreateView
+from django.urls import reverse
+from django.shortcuts import render, redirect
+
 
 # Create your views here.
 
@@ -13,13 +15,22 @@ class MainSiteView(View):
         return render(request, 'conf_template.html', ctx)
 
 
-class RoomView(LoginRequiredMixin, DetailView):
+class RoomView(DetailView):
     model = Room
 
 
-class AddNewRoomView(View):
+class AddNewRoomView(CreateView):
     model = Room
-    pass
+    fields = '__all__'
+
+    def get_success_url(self):
+        return reverse('room', kwargs={'pk': self.object.pk})
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return redirect(self.get_success_url())
 
 
 class ModifyRoomView(View):
