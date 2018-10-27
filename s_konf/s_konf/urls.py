@@ -24,8 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', MainSiteView.as_view(), name='main'),
     url(r'^room/(?P<pk>\d+)/$', RoomView.as_view(), name="room"),
-    path('room/new', AddNewRoomView.as_view(), name='new_room'),
-    url(r'^room/modify/(?P<pk>\d+)/$', ModifyRoomView.as_view(), name="modify_room"),
-    url(r'^room/delete/(?P<pk>\d+)/$', DeleteRoomView.as_view(), name="delete_room"),
+    url(r'^room/new$', AddNewRoomView.as_view(), name="new-room"),
+    url(r'^room/modify/(?P<pk>\d+)/$', ModifyRoomView.as_view(), name="modify-room"),
+    url(r'^room/delete/(?P<pk>\d+)/$', DeleteRoomView.as_view(), name="delete-room"),
 
 ]
