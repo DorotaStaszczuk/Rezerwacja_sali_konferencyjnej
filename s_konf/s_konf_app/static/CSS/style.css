@@ -1,5 +1,5 @@
 html {
-    background-color: lightblue;
+    background-color: #242E49;
 }
 
 body {
@@ -7,10 +7,16 @@ body {
 }
 
 h1 {
-    font-size: 20px;
-    color: blue;
+    font-size: 50px;
+    color: #4074E1;
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 30px;
+    color: #535C7B;
+}
+
+p {
+    color: #535C7B;
+    font-size: 20px;
 }
