@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 
 class MainSiteView(View):
     def get(self, request):
-        ctx = {}
+        ctx = {'rooms':Room.objects.all()}
         return render(request, 'conf_template.html', ctx)
 
 

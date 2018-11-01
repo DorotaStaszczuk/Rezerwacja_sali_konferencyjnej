@@ -3,13 +3,20 @@
 {% block content %}
 
     <h2>Lista dostępnych sal:</h2>
+        <div>
+        {% for room in  rooms %}
+            <p>{{room.pk}}. Sala: {{ room.name }}</p>
+            <p>Pojemność: {{room.capacity}} osób</p>
+            <p>Rzutnik: {{room.projector}}</p>
+            </div>
+                <a href="">Rezerwuj</a>
+                <a href="">Modyfikuj</a>
+                <a href="">Usuń</a>
+            <div>
+        {% empty %}
+        <h2>Żadna sala nie została dodana</h2>
+        {% endfor %}
 
-    <p>Nazwa: </p>
-    <p>Status: </p>
-    <a href="">Rezerwuj</a>
-    <a href="">Modyfikuj</a>
-    <a href="">Usuń</a>
-    <div>
         <a href="{% url 'new-room' %}"><input type="button" value="Dodaj nową salę" /></a>
     </div>
 {% endblock %}}
