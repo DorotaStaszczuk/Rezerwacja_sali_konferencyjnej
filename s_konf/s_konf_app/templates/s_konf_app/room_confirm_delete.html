@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <form action="" method="post">{% csrf_token %}
+        <h2>Czy napewno chcesz usunąć salę {{ object }}?</h2>
+    <input type="submit" value="Tak, chcę" />
+            <a href="{% url 'room' pk=object.pk %}"><input type="button" value="Nie" /></a>
+    </form>
+</div>
+{% endblock %}
