@@ -3,9 +3,9 @@
 
 {% block content %}
 <div>
-    <p id="s1">Nazwa: {{ object.name }}</p>
-    <p id="s2">Pojemność: {{ object.capacity }}</p>
-    <p id="s2">Rzutnik: {{ object.projector }}</p>
+    <p>Nazwa: {{ object.name }}</p>
+    <p>Pojemność: {{ object.capacity }}</p>
+    <p>Rzutnik: {{ object.projector }}</p>
 </div>
     <a href="{% url 'modify-room' pk=object.pk %}"><input type="button" value="Edytuj salę" /></a>
     <a href="{% url 'delete-room' pk=object.pk %}"><input type="button" value="Usuń salę" /></a>
