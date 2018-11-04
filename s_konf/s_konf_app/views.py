@@ -1,9 +1,10 @@
 from django.views import View
 from .models import Room
 from django.views.generic import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.urls import reverse
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 
 
 # Create your views here.
@@ -11,7 +12,7 @@ from django.shortcuts import render, redirect
 
 class MainSiteView(View):
     def get(self, request):
-        ctx = {'rooms':Room.objects.all()}
+        ctx = {'rooms': Room.objects.all()}
         return render(request, 'conf_template.html', ctx)
 
 
@@ -38,6 +39,6 @@ class ModifyRoomView(View):
     pass
 
 
-class DeleteRoomView(View):
+class DeleteRoomView(DeleteView):
     model = Room
-    pass
+    success_url = reverse_lazy("main")

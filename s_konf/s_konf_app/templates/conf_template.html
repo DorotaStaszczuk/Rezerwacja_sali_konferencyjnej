@@ -11,7 +11,7 @@
             </div>
                 <a href="">Rezerwuj</a>
                 <a href="">Modyfikuj</a>
-                <a href="">Usuń</a>
+                <a href="{% url 'room' pk=room.pk %}"><input type="button" value="Usuń salę" /></a>
             <div>
         {% empty %}
         <h2>Żadna sala nie została dodana</h2>

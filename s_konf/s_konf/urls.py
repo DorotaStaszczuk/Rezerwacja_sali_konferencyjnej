@@ -23,9 +23,9 @@ from s_konf_app.views import MainSiteView, RoomView, AddNewRoomView, ModifyRoomV
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', MainSiteView.as_view(), name='main'),
-    url(r'^room/(?P<pk>\d+)/$', RoomView.as_view(), name="room"),
+    url(r'^room/(?P<pk>(\d)+)/$', RoomView.as_view(), name="room"),
     url(r'^room/new$', AddNewRoomView.as_view(), name="new-room"),
     url(r'^room/modify/(?P<pk>\d+)/$', ModifyRoomView.as_view(), name="modify-room"),
-    url(r'^room/delete/(?P<pk>\d+)/$', DeleteRoomView.as_view(), name="delete-room"),
+    url(r'^delete_room/(?P<pk>(\d)+)/$', DeleteRoomView.as_view(), name="delete-room"),
 
 ]
