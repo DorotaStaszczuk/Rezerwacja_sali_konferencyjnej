@@ -1,7 +1,7 @@
 from django.views import View
 from .models import Room
 from django.views.generic import DetailView
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -34,9 +34,13 @@ class AddNewRoomView(CreateView):
         return redirect(self.get_success_url())
 
 
-class ModifyRoomView(View):
+class ModifyRoomView(UpdateView):
     model = Room
-    pass
+    fields = '__all__'
+    template_name_suffix = '_update_form'
+
+    def get_success_url(self):
+        return reverse('room', args=[self.object.pk])
 
 
 class DeleteRoomView(DeleteView):
