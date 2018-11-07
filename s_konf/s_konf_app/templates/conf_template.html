@@ -9,7 +9,7 @@
             <p>Pojemność: {{room.capacity}} osób</p>
             <p>Rzutnik: {{room.projector}}</p>
             </div>
-                <a href="">Rezerwuj</a>
+                <a href=""><input type="button" value="Rezerwuj salę" /></a>
                 <a href="{% url 'modify-room' pk=room.pk %}"><input type="button" value="Modyfikuj salę" /></a>
                 <a href="{% url 'room' pk=room.pk %}"><input type="button" value="Usuń salę" /></a>
             <div>
