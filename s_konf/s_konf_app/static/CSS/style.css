@@ -20,3 +20,8 @@ p {
     color: #535C7B;
     font-size: 20px;
 }
+
+#room {
+    text-decoration: none;
+    color: #4074E1;
+}
