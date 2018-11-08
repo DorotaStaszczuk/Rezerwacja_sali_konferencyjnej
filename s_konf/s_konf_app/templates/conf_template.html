@@ -8,6 +8,7 @@
             <p>{{room.pk}}. Sala: <a id="room" href="{% url 'room' pk=room.pk %}">{{ room.name }}</a></p>
             <p>Pojemność: {{room.capacity}} osób</p>
             <p>Rzutnik: {{room.projector}}</p>
+            <p>Status: </p>
             </div>
                 <a href=""><input type="button" value="Rezerwuj salę" /></a>
                 <a href="{% url 'modify-room' pk=room.pk %}"><input type="button" value="Modyfikuj salę" /></a>
@@ -18,5 +19,5 @@
         {% endfor %}
 
         <a href="{% url 'new-room' %}"><input type="button" value="Dodaj nową salę" /></a>
-    </div>
+        </div>
 {% endblock %}}

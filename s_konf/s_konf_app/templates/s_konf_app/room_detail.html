@@ -6,7 +6,9 @@
     <p>Nazwa: {{ object.name }}</p>
     <p>Pojemność: {{ object.capacity }}</p>
     <p>Rzutnik: {{ object.projector }}</p>
+    <p>Status: </p>
 </div>
+    <a href=""><input type="button" value="Rezerwuj salę" /></a>
     <a href="{% url 'modify-room' pk=object.pk %}"><input type="button" value="Edytuj salę" /></a>
     <a href="{% url 'delete-room' pk=object.pk %}"><input type="button" value="Usuń salę" /></a>
 
