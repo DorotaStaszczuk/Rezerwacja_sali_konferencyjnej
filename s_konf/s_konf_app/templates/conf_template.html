@@ -4,6 +4,8 @@
 
     <h2>Lista dostępnych sal:</h2>
         <div>
+            <a href="{% url 'new-room' %}"><input type="button" value="Wyszukaj salę" /></a>
+            <a href="{% url 'new-room' %}"><input type="button" value="Dodaj nową salę" /></a>
         {% for room in  rooms %}
             <p>{{room.pk}}. Sala: <a id="room" href="{% url 'room' pk=room.pk %}">{{ room.name }}</a></p>
             <p>Pojemność: {{room.capacity}} osób</p>
@@ -18,6 +20,6 @@
         <h2>Żadna sala nie została dodana</h2>
         {% endfor %}
 
-        <a href="{% url 'new-room' %}"><input type="button" value="Dodaj nową salę" /></a>
+
         </div>
 {% endblock %}}
