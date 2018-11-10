@@ -17,7 +17,9 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from s_konf_app.views import MainSiteView, RoomView, AddNewRoomView, ModifyRoomView, DeleteRoomView, ReservationView
+from s_konf_app.views import MainSiteView, RoomView, AddNewRoomView, ModifyRoomView, DeleteRoomView, ReservationView,\
+    SearchView
+
 
 
 urlpatterns = [
@@ -28,5 +30,6 @@ urlpatterns = [
     url(r'^room/modify/(?P<pk>\d+)/$', ModifyRoomView.as_view(), name="modify-room"),
     url(r'^delete_room/(?P<pk>(\d)+)/$', DeleteRoomView.as_view(), name="delete-room"),
     url(r'^reservation/(?P<pk>(\d)+)/$', ReservationView.as_view(), name="reservation"),
+    url(r'^search$', SearchView.as_view(), name="search"),
 
 ]
