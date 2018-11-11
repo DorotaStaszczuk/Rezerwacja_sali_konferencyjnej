@@ -46,3 +46,13 @@ class ModifyRoomView(UpdateView):
 class DeleteRoomView(DeleteView):
     model = Room
     success_url = reverse_lazy("main")
+
+
+class ReservationView(View):
+    def get_success_url(self):
+        return reverse('main')
+
+
+class SearchView(View):
+    def get(self, request):
+        return render(request, 'search_form.html')
