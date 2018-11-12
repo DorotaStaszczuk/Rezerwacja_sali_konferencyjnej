@@ -21,7 +21,6 @@ from s_konf_app.views import MainSiteView, RoomView, AddNewRoomView, ModifyRoomV
     SearchView
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('main', MainSiteView.as_view(), name='main'),
