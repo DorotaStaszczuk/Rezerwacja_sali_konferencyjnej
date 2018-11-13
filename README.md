@@ -21,3 +21,4 @@ Project is created with:
 * Python
 * Django
 * HTML
+* CSS
