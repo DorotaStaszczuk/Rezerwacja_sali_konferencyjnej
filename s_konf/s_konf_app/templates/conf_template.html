@@ -8,7 +8,11 @@
             <a href="{% url 'new-room' %}"><input type="button" value="Dodaj nową salę" /></a>
         {% for room in rooms %}
                <p> {{ forloop.counter }}. Sala: <a id="room" href="{% url 'room' pk=room.pk %}">{{ room.name }}</a></p>
+            {% if room.capacity < 5 %}
+            <p>Pojemność: {{room.capacity}} osoby</p>
+            {% else %}
             <p>Pojemność: {{room.capacity}} osób</p>
+            {% endif %}
             <p>Rzutnik:
             {% if room.projector is False %}
                 Nie
