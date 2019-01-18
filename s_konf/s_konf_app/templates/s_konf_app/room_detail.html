@@ -4,7 +4,11 @@
 {% block content %}
 <div>
     <p>Nazwa sali: {{ object.name }}</p>
-    <p>Pojemność: {{ object.capacity }}</p>
+    {% if room.capacity < 5 %}
+        <p>Pojemność: {{room.capacity}} osoby</p>
+    {% else %}
+        <p>Pojemność: {{room.capacity}} osób</p>
+    {% endif %}
     <p>Rzutnik:
             {% if room.projector is False %}
                 Nie
