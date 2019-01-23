@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="content">
+<h2>Nowa rezerwacja</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Dodaj rezerwację">
+    <a href="{% url 'main' %}"><input type="button" value="Cofnij" /></a>
+</form>
+</div>
+{% endblock %}
