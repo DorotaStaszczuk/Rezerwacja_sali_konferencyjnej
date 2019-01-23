@@ -52,6 +52,12 @@ class ReservationView(View):
     def get_success_url(self):
         return reverse('main')
 
+class AddNewReservationView(View):
+    pass
+
+class ModifyReservationView(View):
+    pass
+
 
 class SearchView(View):
     def get(self, request):
