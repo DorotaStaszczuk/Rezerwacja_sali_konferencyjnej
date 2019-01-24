@@ -52,9 +52,12 @@ class ReservationView(DetailView):
     model = Reservation
 
 
-class AddNewReservationView(View):
+class AddNewReservationView(CreateView):
+    model = Reservation
+    fields = '__all__'
+
     def get_success_url(self):
-        return reverse('main')
+        return reverse('reservation', kwargs={'pk': self.object.pk})
 
 
 class ModifyReservationView(View):
