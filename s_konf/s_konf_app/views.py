@@ -1,5 +1,5 @@
 from django.views import View
-from .models import Room
+from .models import Room, Reservation
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse
@@ -48,12 +48,14 @@ class DeleteRoomView(DeleteView):
     success_url = reverse_lazy("main")
 
 
-class ReservationView(View):
+class ReservationView(DetailView):
+    model = Reservation
+
+
+class AddNewReservationView(View):
     def get_success_url(self):
         return reverse('main')
 
-class AddNewReservationView(View):
-    pass
 
 class ModifyReservationView(View):
     pass
