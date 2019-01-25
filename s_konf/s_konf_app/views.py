@@ -60,8 +60,13 @@ class AddNewReservationView(CreateView):
         return reverse('reservation', kwargs={'pk': self.object.pk})
 
 
-class ModifyReservationView(View):
-    pass
+class ModifyReservationView(UpdateView):
+    model = Reservation
+    fields = '__all__'
+    template_name_suffix = '_update_form'
+
+    def get_success_url(self):
+        return reverse('reservation', args=[self.object.pk])
 
 
 class SearchView(View):
