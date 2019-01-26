@@ -54,7 +54,7 @@ class ReservationView(DetailView):
 
 class AddNewReservationView(CreateView):
     model = Reservation
-    fields = '__all__'
+    fields = ('date', 'comment')
 
     def get_success_url(self):
         return reverse('reservation', kwargs={'pk': self.object.pk})
@@ -62,7 +62,7 @@ class AddNewReservationView(CreateView):
 
 class ModifyReservationView(UpdateView):
     model = Reservation
-    fields = '__all__'
+    fields = ('date', 'comment')
     template_name_suffix = '_update_form'
 
     def get_success_url(self):
