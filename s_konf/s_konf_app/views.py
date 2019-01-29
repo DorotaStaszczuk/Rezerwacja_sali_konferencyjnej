@@ -59,6 +59,12 @@ class AddNewReservationView(CreateView):
     def get_success_url(self):
         return reverse('reservation', kwargs={'pk': self.object.pk})
 
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return redirect(self.get_success_url())
+
 
 class ModifyReservationView(UpdateView):
     model = Reservation

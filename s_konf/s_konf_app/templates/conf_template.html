@@ -22,7 +22,7 @@
             </p>
             <p>Status: </p>
             </div>
-                <a href="{% url 'new-reservation' %}"><input type="button" value="Rezerwuj salę" /></a>
+                <a href="{% url 'new-reservation' pk=room.pk %}"><input type="button" value="Rezerwuj salę" /></a>
                 <a href="{% url 'modify-room' pk=room.pk %}"><input type="button" value="Edytuj salę" /></a>
                 <a href="{% url 'room' pk=room.pk %}"><input type="button" value="Usuń salę" /></a>
             <div>
